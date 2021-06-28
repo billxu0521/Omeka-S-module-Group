@@ -1225,6 +1225,11 @@ SQL;
 
         $result = [];
         switch ($contentType) {
+            case 'id':
+                foreach ($list as $entity) {
+                    $result[$entity->name()] = $entity;
+                }
+                break;
             case 'reference':
                 foreach ($list as $entity) {
                     $result[$entity->name()] = $entity;
